@@ -14,10 +14,10 @@ parser.add_argument('-i', help='sam file input')
 parser.add_argument('-o', help='bed file output', default = 'default.bed')
 
 args=parser.parse_args()
-print(args.o)
+
 if args.o == 'default.bed':     
     args.o=(str(args.i).rsplit(".",1)[0]+".bed")    
-print(args.o)    
+  
 if args.i == args.o:
     raise ValueError('Your input and output files appear to be identical')
 if str(args.i).rsplit(".",1)[1] != "sam":
